@@ -1,13 +1,27 @@
 package api.dev.WorkApp.model.users;
 
+
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.stereotype.Component;
+
+@Document
+@Component
 public class ClientUser extends GeneralUser{
 
+    @Field
     private int height;
+    @Field
     private int weight;
+    @Field
     private int targetWeight;
+    @Field
     private String[] prevTargetWeights;
 
 
+    protected  ClientUser(){
+        super();
+    }
     public ClientUser(String uid, String first, String last, String email, String title, boolean active) {
         super(uid, first, last, email, title, active);
     }
@@ -52,3 +66,5 @@ public class ClientUser extends GeneralUser{
         this.prevTargetWeights = prevTargetWeights;
     }
 }
+
+
