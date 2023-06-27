@@ -1,15 +1,30 @@
 package api.dev.WorkApp.model.users;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.stereotype.Component;
+
+@Document
+@Component
 public class GeneralUser {
 
+    @Id
     private String uid;
+    @Field
     private String first;
+    @Field
     private String last;
+    @Field
     private String phoneNumber;
+    @Field
     private String email;
+    @Field
     private String title;
+    @Field
     private boolean active;
 
+    protected GeneralUser(){}
     public GeneralUser(String uid, String first, String last, String email, String title, boolean active) {
         this.uid = uid;
         this.first = first;
