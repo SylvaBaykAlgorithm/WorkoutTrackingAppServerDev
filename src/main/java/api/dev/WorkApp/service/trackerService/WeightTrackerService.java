@@ -1,33 +1,32 @@
 package api.dev.WorkApp.service.trackerService;
 
-import api.dev.WorkApp.exceptions.EntityDoesNotExist;
-import api.dev.WorkApp.model.trackers.WeightTracker;
-import api.dev.WorkApp.repo.ClientUserRepository;
 import api.dev.WorkApp.repo.trackerRepo.WeightTrackerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
+@Component
 public class WeightTrackerService {
 
     @Autowired
     WeightTrackerRepo weightTrackerRepo;
-
-    @Autowired
-    ClientUserRepository userRepository;
+//
+//    @Autowired
+//    ClientUserRepository userRepository;
 
 
     public String createWeightTracker(String uid, String targetWeight){
         try{
             if(uid.isBlank() || targetWeight.isBlank()){
-                return "";
+                return "UID or TargetWeight is blank";
             }
             String result = weightTrackerRepo.createWeightTracker(uid,targetWeight);
                 return result;
         }catch (Error e){
             System.out.println(e);
         }
-        return "";
+        return "Tracker Service Issue";
     }
 //    public WeightTracker getWeightTracker(String uid){
 //
