@@ -4,7 +4,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
 import java.util.HashMap;
 
@@ -20,10 +19,12 @@ public class WeightTracker {
     @Field
     private HashMap<Date,String> previousWeights;
 
+    public WeightTracker(){}
+
     public WeightTracker(String uid,String targetWeight) {
         this.uid = uid;
         this.targetWeight = targetWeight;
-        this.previousWeights = new HashMap<>();
+//        this.previousWeights = new HashMap<>();
     }
 
     public String getUid() {
