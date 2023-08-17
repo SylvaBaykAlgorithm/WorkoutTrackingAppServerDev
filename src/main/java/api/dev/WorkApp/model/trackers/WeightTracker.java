@@ -24,7 +24,7 @@ public class WeightTracker {
     public WeightTracker(String uid,String targetWeight) {
         this.uid = uid;
         this.targetWeight = targetWeight;
-//        this.previousWeights = new HashMap<>();
+        this.previousWeights = new HashMap<>();
     }
 
     public String getUid() {

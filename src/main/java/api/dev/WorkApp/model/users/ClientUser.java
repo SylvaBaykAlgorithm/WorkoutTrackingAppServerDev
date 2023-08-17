@@ -19,9 +19,10 @@ public class ClientUser extends GeneralUser{
     private String[] prevTargetWeights;
 
 
-    protected  ClientUser(){
+    public  ClientUser(){
         super();
     }
+
     public ClientUser(String uid, String first, String last, String email, String title, boolean active) {
         super(uid, first, last, email, title, active);
     }
